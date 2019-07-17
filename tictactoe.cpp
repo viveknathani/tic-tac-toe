@@ -4,6 +4,8 @@
 using namespace std;
 
 char matrix[3][3];
+
+//function declarations
 char check();
 void createMatrix();
 void userMove();
@@ -22,6 +24,8 @@ int main()
     createMatrix();
     cout<<"All the best!"<<endl;
     system("pause");
+    
+    //game execution 
     do{
         displayMatrix();
         userMove();
@@ -36,6 +40,9 @@ int main()
     return 0;
 }
 
+//function definitions
+
+//matrix initialized
 void createMatrix()
 {
     for(int i=0; i<3; i++)
@@ -47,6 +54,7 @@ void createMatrix()
     }
 }
 
+//user's move to be recorded
 void userMove()
 {
     int x, y;
@@ -62,6 +70,7 @@ void userMove()
     else { matrix[x][y]='X'; }
 }
 
+//computer's move, which is pretty easy to beat
 void computerMove()
 {
     int i,j;
@@ -83,6 +92,7 @@ void computerMove()
     }
 }
 
+//a coordinate map to guide the user
 void showCoordinates()
 {
     for(int i=0; i<3; i++)
@@ -95,6 +105,8 @@ void showCoordinates()
         if(i!=2) { cout<<"--|--|--"<<endl; }
     }
 }
+
+//showing matrix at various stages
 void displayMatrix()
 {
     for(int t=0; t<3; t++)
@@ -104,6 +116,7 @@ void displayMatrix()
     }
 }
 
+//checking for win
 char check()
 {
     for(int i=0; i<3; i++)
